@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Globe, Users, Award, TrendingUp } from "lucide-react"
 
+import Image from 'next/image';
+
 export default function AboutSection() {
   const stats = [
     { icon: Globe, label: "Countries Served", value: "50+" },
@@ -35,7 +37,16 @@ export default function AboutSection() {
           </div>
 
           <div className="relative">
-            <img src="/mainlogo.jpg" alt="About our company" className="rounded-lg shadow-lg w-full" />
+            <div className="relative w-full aspect-[4/3] rounded-lg shadow-lg overflow-hidden">
+              <Image
+                src="/mainlogo.jpg"
+                alt="About our company"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority
+              />
+            </div>
             <div className="absolute -bottom-6 -left-6 bg-primary text-primary-foreground p-6 rounded-lg shadow-lg">
               <div className="text-2xl font-bold">15+</div>
               <div className="text-sm">Years of Excellence</div>

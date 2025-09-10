@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Image from 'next/image';
 import { Card, CardContent } from "@/components/ui/card"
 import { Star, ChevronLeft, ChevronRight } from "lucide-react"
 
@@ -12,7 +13,7 @@ const testimonials = [
     country: "United States",
     rating: 5,
     text: "Working with najmcommercial has been exceptional. Their quality products and reliable delivery have helped us expand our business significantly. The team is professional and always goes above and beyond to meet our requirements.",
-    avatar: "/placeholder.svg?height=80&width=80",
+    avatar: "/placeholder-user.jpg",
   },
   {
     id: 2,
@@ -21,7 +22,7 @@ const testimonials = [
     country: "UAE",
     rating: 5,
     text: "The spices and handicrafts we import from najmcommercial are of outstanding quality. Their attention to detail and commitment to timely delivery has made them our preferred partner for over 5 years.",
-    avatar: "/placeholder.svg?height=80&width=80",
+    avatar: "/placeholder-user.jpg",
   },
   {
     id: 3,
@@ -30,7 +31,7 @@ const testimonials = [
     country: "Spain",
     rating: 5,
     text: "Excellent service and premium quality products! najmcommercial has consistently delivered fresh fruits and vegetables that exceed our expectations. Their customer service is remarkable and they truly care about building long-term relationships.",
-    avatar: "/placeholder.svg?height=80&width=80",
+    avatar: "/placeholder-user.jpg",
   },
 ]
 
@@ -83,11 +84,16 @@ export default function Testimonials() {
                       </blockquote>
 
                       <div className="flex items-center justify-center gap-4">
-                        <img
-                          src={testimonial.avatar || "/placeholder.svg"}
-                          alt={testimonial.name}
-                          className="w-16 h-16 rounded-full object-cover"
-                        />
+                        <div className="relative w-16 h-16 rounded-full overflow-hidden">
+                          <Image
+                            src={testimonial.avatar}
+                            alt={testimonial.name}
+                            width={64}
+                            height={64}
+                            className="object-cover"
+                            sizes="64px"
+                          />
+                        </div>
                         <div className="text-left">
                           <div className="font-semibold text-foreground">{testimonial.name}</div>
                           <div className="text-sm text-muted-foreground">{testimonial.company}</div>

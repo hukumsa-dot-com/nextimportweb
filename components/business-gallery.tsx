@@ -1,22 +1,29 @@
 "use client"
 
 import { useState } from "react"
+import Image from 'next/image';
 
 const galleryImages = [
   {
     id: 1,
-    src: "/placeholder.svg?height=400&width=600",
+    src: "/p-1.webp",
     alt: "Export warehouse facility",
+    width: 600,
+    height: 400
   },
   {
     id: 2,
-    src: "/placeholder.svg?height=400&width=600",
+    src: "/p-2.webp",
     alt: "Shipping containers at port",
+    width: 600,
+    height: 400
   },
   {
     id: 3,
-    src: "/placeholder.svg?height=400&width=600",
+    src: "/p-3.webp",
     alt: "Quality control laboratory",
+    width: 600,
+    height: 400
   },
   {
     id: 4,
@@ -71,11 +78,16 @@ export default function BusinessGallery() {
               className="group relative overflow-hidden rounded-lg cursor-pointer"
               onClick={() => setSelectedImage(index)}
             >
-              <img
-                src={image.src || "/placeholder.svg"}
-                alt={image.alt}
-                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
-              />
+              <div className="relative w-full h-64">
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  priority={index < 3} // Only preload first 3 images
+                />
+              </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
@@ -100,11 +112,16 @@ export default function BusinessGallery() {
             onClick={() => setSelectedImage(null)}
           >
             <div className="relative max-w-4xl max-h-full">
-              <img
-                src={galleryImages[selectedImage].src || "/placeholder.svg"}
-                alt={galleryImages[selectedImage].alt}
-                className="max-w-full max-h-full object-contain rounded-lg"
-              />
+              <div className="relative w-full h-full">
+                <Image
+                  src={galleryImages[selectedImage].src}
+                  alt={galleryImages[selectedImage].alt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 80vw"
+                  className="object-contain rounded-lg"
+                  priority
+                />
+              </div>
               <button
                 onClick={() => setSelectedImage(null)}
                 className="absolute top-4 right-4 w-10 h-10 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm text-white hover:bg-white/30 transition-colors"
