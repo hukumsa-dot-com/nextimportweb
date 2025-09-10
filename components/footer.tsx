@@ -14,17 +14,32 @@ export default function Footer() {
               Your trusted partner in international trade with over 15 years of experience connecting global markets.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-background/60 hover:text-secondary transition-colors">
-                <Facebook className="w-5 h-5" />
+              <a 
+                href="https://facebook.com/yourpage" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-9 h-9 rounded-full bg-background/10 hover:bg-secondary/20 transition-colors group"
+                aria-label="Visit our Facebook page"
+              >
+                <Facebook className="w-4 h-4 text-background/80 group-hover:text-white transition-colors" />
               </a>
-              <a href="#" className="text-background/60 hover:text-secondary transition-colors">
-                <Twitter className="w-5 h-5" />
+              <a 
+                href="https://instagram.com/yourprofile" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-9 h-9 rounded-full bg-background/10 hover:bg-pink-500/20 transition-colors group"
+                aria-label="Follow us on Instagram"
+              >
+                <Instagram className="w-4 h-4 text-background/80 group-hover:text-white transition-colors" />
               </a>
-              <a href="#" className="text-background/60 hover:text-secondary transition-colors">
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-background/60 hover:text-secondary transition-colors">
-                <Instagram className="w-5 h-5" />
+              <a 
+                href="https://linkedin.com/company/yourcompany" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-9 h-9 rounded-full bg-background/10 hover:bg-blue-600/20 transition-colors group"
+                aria-label="Connect with us on LinkedIn"
+              >
+                <Linkedin className="w-4 h-4 text-background/80 group-hover:text-white transition-colors" />
               </a>
             </div>
           </div>

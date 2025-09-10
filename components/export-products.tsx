@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
@@ -92,13 +93,14 @@ export default function ExportProducts() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
           {products.map((product, index) => (
             <Card key={index} className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-              <div className="relative overflow-hidden rounded-t-lg">
-                <img
-                  src={product.image || "/placeholder.svg"}
+              <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
+                <Image
+                  src={product.image}
                   alt={product.title}
-                  className="w-full h-40 sm:h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  fill
+                  className="object-cover object-center"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
               <CardHeader className="pb-2 sm:pb-3 px-4 sm:px-6">
                 <CardTitle className="text-base sm:text-lg text-balance leading-tight">{product.title}</CardTitle>

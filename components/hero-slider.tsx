@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react"
 
@@ -59,10 +60,17 @@ export default function HeroSlider() {
           }`}
         >
           <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: `url(${slide.image})` }}
+            className="absolute inset-0"
           >
-            <div className="absolute inset-0 bg-black/50" />
+            <Image
+              src={slide.image}
+              alt={slide.title}
+              fill
+              className="object-cover object-center"
+              priority={index === 0}
+              sizes="100vw"
+            />
+            <div className="absolute inset-0 bg-black/30" />
           </div>
 
           <div className="relative z-10 container mx-auto px-4 h-full flex items-center">

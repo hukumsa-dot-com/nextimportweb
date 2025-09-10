@@ -5,6 +5,7 @@ import { GeistMono } from "geist/font/mono"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import "./globals.css"
+import WhatsAppButton from "@/components/whatsapp-button"
 
 export const metadata: Metadata = {
   title: "najmcommercial - Global Export Import Solutions",
@@ -21,7 +22,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
-        <Suspense fallback={null}>{children}</Suspense>
+        <Suspense fallback={null}>
+          {children}
+          <WhatsAppButton />
+        </Suspense>
         <Analytics />
       </body>
     </html>

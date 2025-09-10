@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Menu, X, Globe, Phone, Mail } from "lucide-react"
 
@@ -35,7 +36,16 @@ export default function Header() {
       <div className="container mx-auto px-4 py-3 md:py-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
-            <img src="/logo.png" alt="" className="text-xl md:text-2xl font-bold text-primary h-15" />
+            <div className="relative w-40 h-12 md:w-48 md:h-14">
+              <Image 
+                src="/logo.png" 
+                alt="Najm Commercial Logo" 
+                fill
+                className="object-contain"
+                priority
+                sizes="(max-width: 768px) 10rem, 12rem"
+              />
+            </div>
           </div>
 
           {/* Desktop Navigation */}
