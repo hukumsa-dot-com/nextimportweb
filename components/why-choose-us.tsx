@@ -1,5 +1,11 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Handshake, Award, Clock, DollarSign, Heart, Users } from "lucide-react"
+import { Handshake, Award, Clock, DollarSign, Heart, Users, Globe } from "lucide-react"
+import dynamic from 'next/dynamic'
+
+// Dynamically import the video component with no SSR to avoid window is not defined errors
+const VideoPlayer = dynamic(() => import('@/components/video-player'), {
+  ssr: false,
+})
 
 const features = [
   {
@@ -87,6 +93,28 @@ export default function WhyChooseUs() {
               <div className="text-primary-foreground/80">Quality Guarantee</div>
             </div>
           </div>
+        </div>
+
+        {/* Shipping Animation Section */}
+        <div className="mt-20 text-center">
+          <div className="inline-flex items-center justify-center gap-2 mb-6">
+            <Globe className="w-6 h-6 text-primary" />
+            <h3 className="text-2xl font-bold">Global Shipping Network</h3>
+          </div>
+          <div className="max-w-4xl mx-auto rounded-xl overflow-hidden shadow-xl bg-card">
+            <VideoPlayer 
+              src="/videos/v.mp4"
+              poster="/shipping-poster.jpg"
+              className="w-full h-auto"
+              autoPlay
+              loop
+              muted
+              playsInline
+            />
+          </div>
+          <p className="mt-6 text-muted-foreground max-w-2xl mx-auto">
+            Our extensive global shipping network ensures your products reach their destination safely and on time, no matter where in the world they're headed.
+          </p>
         </div>
       </div>
     </section>

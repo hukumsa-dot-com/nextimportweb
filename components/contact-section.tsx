@@ -63,9 +63,9 @@ export default function ContactSection() {
                     <div>
                       <h4 className="font-semibold text-foreground mb-1">Address</h4>
                       <p className="text-sm text-muted-foreground">
-                        123 Trade Center, Export Plaza
+                        4/83, Sutherland street, 
                         <br />
-                        Global City, GC 12345
+                        New Zealand
                       </p>
                     </div>
                   </div>
@@ -78,7 +78,7 @@ export default function ContactSection() {
                     <Phone className="w-5 h-5 text-primary flex-shrink-0" />
                     <div>
                       <h4 className="font-semibold text-foreground mb-1">Phone</h4>
-                      <p className="text-sm text-muted-foreground">+1 (555) 123-4567</p>
+                      <p className="text-sm text-muted-foreground">+64226251629</p>
                     </div>
                   </div>
                 </CardContent>

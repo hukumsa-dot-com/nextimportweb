@@ -125,12 +125,12 @@ export default function Footer() {
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-secondary mt-0.5 flex-shrink-0" />
                 <span className="text-background/80 text-sm">
-                  123 Trade Center, Export Plaza, Global City, GC 12345
+                  4/83, Sutherland street, New Zealand
                 </span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-secondary flex-shrink-0" />
-                <span className="text-background/80 text-sm">+1 (555) 123-4567</span>
+                <span className="text-background/80 text-sm">+64226251629</span>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-secondary flex-shrink-0" />
@@ -166,7 +166,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-background/20 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-background/60 text-sm">© 2024 najmcommercial. All rights reserved.</p>
+          <p className="text-background/60 text-sm">©2025 <a className="text-secondary hover:text-secondary/80 transition-colors" href="https://hukumsa.com">HUKUMSA</a>. All rights reserved.</p>
           <div className="flex gap-6 text-sm">
             <a href="#" className="text-background/60 hover:text-secondary transition-colors">
               Privacy Policy
