@@ -1,5 +1,6 @@
 import Header from "@/components/header"
 import HeroSlider from "@/components/hero-slider"
+import YouTubeVideo from "@/components/youtube-video"
 import AboutSection from "@/components/about-section"
 import ExportProducts from "@/components/export-products"
 import BusinessGallery from "@/components/business-gallery"
@@ -14,6 +15,7 @@ export default function HomePage() {
       <Header />
       <main>
         <HeroSlider />
+        <YouTubeVideo />
         <AboutSection />
         <ExportProducts />
         <BusinessGallery />

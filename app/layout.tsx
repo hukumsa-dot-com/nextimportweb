@@ -6,6 +6,7 @@ import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import "./globals.css"
 import WhatsAppButton from "@/components/whatsapp-button"
+import SocialMediaButtons from "@/components/social-media-buttons"
 
 export const metadata: Metadata = {
   title: "najmcommercial - Global Export Import Solutions",
@@ -24,6 +25,7 @@ export default function RootLayout({
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
         <Suspense fallback={null}>
           {children}
+          <SocialMediaButtons />
           <WhatsAppButton />
         </Suspense>
         <Analytics />
